@@ -1,0 +1,665 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+:root {
+  /* Page & Environment */
+  --page-background: #F6C8A7;
+
+  /* Calculator Body */
+  --calculator-bg: #E6E8E8;
+  --calculator-border: #D7D9D9;
+  --calculator-shadow-ambient: rgba(186, 118, 77, 0.38);
+  --calculator-shadow-depth: rgba(135, 78, 48, 0.22);
+
+  /* Top Decorative Stripes */
+  --stripe-red: #DE3B37;
+  --stripe-yellow: #F7A823;
+  --stripe-blue: #1F68B6;
+
+  /* LCD Screen Display */
+  --display-bezel: #1F2224;
+  --display-lcd-bg: #CAD2B7;
+  --display-text-main: #1A201A;
+  --display-text-sub: #636D5B;
+  --display-shadow-inset: rgba(0, 0, 0, 0.2);
+
+  /* Utility Buttons */
+  --utility-btn-bg: #2B2F33;
+  --utility-btn-bevel: #17191B;
+  --utility-btn-text: #E5E7EB;
+
+  /* Number Buttons (Warm Cream) */
+  --btn-num-bg: #FAF7F2;
+  --btn-num-bevel: #D3C8B7;
+  --btn-num-text: #5A3B28;
+  --btn-num-border: rgba(0, 0, 0, 0.05);
+
+  /* Operator Buttons (Warm Apricot / Amber Orange) */
+  --btn-op-bg: #F19B4F;
+  --btn-op-bevel: #CF762D;
+  --btn-op-text: #FFFFFF;
+  --btn-op-border: rgba(0, 0, 0, 0.08);
+
+  /* Clear Button (Burnt Terracotta Orange) */
+  --btn-clear-bg: #C7502B;
+  --btn-clear-bevel: #9B3416;
+  --btn-clear-text: #FFFFFF;
+  --btn-clear-border: rgba(0, 0, 0, 0.08);
+
+  /* Equals Button (Muted Lavender / Slate Purple) */
+  --btn-equals-bg: #9091A7;
+  --btn-equals-bevel: #6C6D82;
+  --btn-equals-text: #FFFFFF;
+  --btn-equals-border: rgba(0, 0, 0, 0.08);
+
+  /* Shared Dimensions */
+  --calc-width: 370px;
+  --calc-border-radius: 36px;
+  --calc-padding: 36px 26px 36px 26px;
+  --btn-border-radius: 12px;
+  --btn-height: 56px;
+  --btn-gap: 12px;
+
+  /* Typography Stacks */
+  --font-display: 'SF Mono', 'DM Mono', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+  --font-buttons: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--page-background);
+  font-family: var(--font-buttons);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   CALCULATOR
+   ========================================================================== */
+.calculator {
+  position: relative;
+  width: 100%;
+  max-width: var(--calc-width);
+  background-color: var(--calculator-bg);
+  border-radius: var(--calc-border-radius);
+  padding: var(--calc-padding);
+  border: 1px solid var(--calculator-border);
+  user-select: none;
+
+  /* Layered physical shadow casting softly onto peach background */
+  box-shadow:
+    0 22px 45px -8px var(--calculator-shadow-ambient),
+    0 40px 80px -15px var(--calculator-shadow-depth),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   DECORATION (TOP STRIPES)
+   ========================================================================== */
+.top-stripes {
+  position: absolute;
+  top: 14px;
+  left: 36px;
+  display: flex;
+  gap: 3px;
+  height: 32px;
+  z-index: 2;
+}
+
+.stripe {
+  width: 8px;
+  height: 100%;
+  border-radius: 1px 1px 2px 2px;
+  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.stripe-red {
+  background-color: var(--stripe-red);
+}
+
+.stripe-yellow {
+  background-color: var(--stripe-yellow);
+}
+
+.stripe-blue {
+  background-color: var(--stripe-blue);
+}
+
+/* ==========================================================================
+   DISPLAY
+   ========================================================================== */
+.calculator-display {
+  position: relative;
+  margin-top: 18px;
+  background-color: var(--display-bezel);
+  border-radius: 12px;
+  padding: 8px;
+  border: 1px solid #161819;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.25),
+    inset 0 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.lcd-screen {
+  position: relative;
+  background-color: var(--display-lcd-bg);
+  border-radius: 6px;
+  padding: 14px 16px 10px 16px;
+  min-height: 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  overflow: hidden;
+  box-shadow:
+    inset 0 3px 6px var(--display-shadow-inset),
+    inset 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Main calculated number / current input */
+.display-main {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--display-text-main);
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  direction: ltr;
+  text-align: right;
+  transition: font-size 0.12s ease;
+}
+
+/* Smaller secondary expression underneath the main number */
+.display-expression {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--display-text-sub);
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 18px;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   HISTORY PANEL
+   ========================================================================== */
+.history-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: #23272A;
+  border: 1px solid #161819;
+  border-radius: 10px;
+  padding: 12px;
+  z-index: 50;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  display: none;
+}
+
+.history-panel.is-open {
+  display: block;
+  animation: fadeInDown 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px;
+}
+
+.history-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  color: #9CA3AF;
+}
+
+.history-clear-btn {
+  background: none;
+  border: none;
+  color: #F87171;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.history-clear-btn:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.history-list {
+  max-height: 160px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.history-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 10px;
+  text-align: right;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.history-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.history-item-expr {
+  font-size: 11px;
+  color: #9CA3AF;
+  font-family: var(--font-display);
+}
+
+.history-item-res {
+  font-size: 15px;
+  font-weight: 700;
+  color: #F3F4F6;
+  font-family: var(--font-display);
+}
+
+.history-empty {
+  font-size: 12px;
+  color: #6B7280;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* ==========================================================================
+   UTILITY BUTTONS (ROW BELOW DISPLAY)
+   ========================================================================== */
+.utility-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+  margin-bottom: 16px;
+  padding-right: 2px;
+}
+
+.utility-button {
+  width: 44px;
+  height: 28px;
+  background-color: var(--utility-btn-bg);
+  border: 1px solid #1c1e20;
+  border-radius: 6px;
+  color: var(--utility-btn-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+
+  /* Tactile shadow with subtle bottom lip */
+  box-shadow:
+    0 3px 0 var(--utility-btn-bevel),
+    0 4px 5px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  transition: transform 0.06s ease, box-shadow 0.06s ease, filter 0.06s ease;
+}
+
+.utility-button:hover {
+  filter: brightness(1.15);
+}
+
+.utility-button:active,
+.utility-button.is-pressed {
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 var(--utility-btn-bevel),
+    0 2px 3px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.utility-icon {
+  width: 17px;
+  height: 17px;
+  display: block;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   KEYPAD GRID
+   ========================================================================== */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--btn-gap);
+  width: 100%;
+}
+
+/* Base style for all calculator keypad buttons */
+.calc-btn {
+  position: relative;
+  height: var(--btn-height);
+  width: 100%;
+  border-radius: var(--btn-border-radius);
+  border: 1px solid transparent;
+  font-family: var(--font-buttons);
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+  padding: 0;
+  transition: transform 0.05s ease, box-shadow 0.05s ease, filter 0.05s ease;
+}
+
+/* Focus styles for keyboard navigation accessibility */
+.calc-btn:focus-visible,
+.utility-button:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   NUMBER BUTTONS
+   ========================================================================== */
+.number-button {
+  background-color: var(--btn-num-bg);
+  color: var(--btn-num-text);
+  border-color: var(--btn-num-border);
+  font-weight: 600;
+  box-shadow:
+    0 4px 0 var(--btn-num-bevel),
+    0 5px 6px rgba(0, 0, 0, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.number-button:hover {
+  filter: brightness(1.02);
+}
+
+.number-button:active,
+.number-button.is-pressed {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 var(--btn-num-bevel),
+    0 2px 3px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  filter: brightness(0.98);
+}
+
+/* Zero button spans 2 columns */
+.zero-button {
+  grid-column: span 2;
+  border-radius: var(--btn-border-radius);
+}
+
+/* Decimal button shares number button appearance */
+.decimal-button {
+  font-size: 26px;
+  font-weight: 700;
+  padding-bottom: 4px;
+}
+
+/* ==========================================================================
+   OPERATOR BUTTONS
+   ========================================================================== */
+.operator-button {
+  background-color: var(--btn-op-bg);
+  color: var(--btn-op-text);
+  border-color: var(--btn-op-border);
+  font-size: 23px;
+  font-weight: 500;
+  box-shadow:
+    0 4px 0 var(--btn-op-bevel),
+    0 5px 6px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.operator-button:hover {
+  filter: brightness(1.04);
+}
+
+.operator-button:active,
+.operator-button.is-pressed {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 var(--btn-op-bevel),
+    0 2px 3px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  filter: brightness(0.96);
+}
+
+/* Active operator indicator when waiting for second operand */
+.operator-button.is-active-op {
+  filter: brightness(1.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   SPECIAL BUTTONS (CLEAR & EQUALS)
+   ========================================================================== */
+/* Clear button (C) */
+.clear-button {
+  background-color: var(--btn-clear-bg);
+  color: var(--btn-clear-text);
+  border-color: var(--btn-clear-border);
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow:
+    0 4px 0 var(--btn-clear-bevel),
+    0 5px 6px rgba(0, 0, 0, 0.14),
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.clear-button:hover {
+  filter: brightness(1.05);
+}
+
+.clear-button:active,
+.clear-button.is-pressed {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 var(--btn-clear-bevel),
+    0 2px 3px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  filter: brightness(0.95);
+}
+
+/* Equals button (=) */
+.equals-button {
+  background-color: var(--btn-equals-bg);
+  color: var(--btn-equals-text);
+  border-color: var(--btn-equals-border);
+  font-size: 24px;
+  font-weight: 600;
+  box-shadow:
+    0 4px 0 var(--btn-equals-bevel),
+    0 5px 6px rgba(0, 0, 0, 0.13),
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.equals-button:hover {
+  filter: brightness(1.05);
+}
+
+.equals-button:active,
+.equals-button.is-pressed {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 var(--btn-equals-bevel),
+    0 2px 3px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  filter: brightness(0.95);
+}
+
+/* ==========================================================================
+   INTERACTIONS & ADAPTIVE FONT SIZING
+   ========================================================================== */
+.display-main.font-medium {
+  font-size: 32px;
+}
+
+.display-main.font-small {
+  font-size: 24px;
+}
+
+.display-main.font-tiny {
+  font-size: 18px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+/* Tablet & Medium Screens */
+@media (max-width: 480px) {
+  :root {
+    --calc-width: 100%;
+    --calc-padding: 30px 18px 28px 18px;
+    --calc-border-radius: 28px;
+    --btn-height: 52px;
+    --btn-gap: 10px;
+    --btn-border-radius: 10px;
+  }
+
+  body {
+    padding: 16px 12px;
+  }
+
+  .top-stripes {
+    top: 12px;
+    left: 26px;
+    height: 28px;
+  }
+
+  .stripe {
+    width: 7px;
+  }
+
+  .display-main {
+    font-size: 36px;
+  }
+
+  .display-main.font-medium {
+    font-size: 28px;
+  }
+
+  .display-main.font-small {
+    font-size: 22px;
+  }
+
+  .display-main.font-tiny {
+    font-size: 16px;
+  }
+
+  .display-expression {
+    font-size: 13px;
+  }
+}
+
+/* Narrow Mobile Screens */
+@media (max-width: 360px) {
+  :root {
+    --calc-padding: 26px 14px 22px 14px;
+    --calc-border-radius: 22px;
+    --btn-height: 46px;
+    --btn-gap: 8px;
+    --btn-border-radius: 8px;
+  }
+
+  .calc-btn {
+    font-size: 20px;
+  }
+
+  .top-stripes {
+    top: 10px;
+    left: 20px;
+    height: 24px;
+  }
+
+  .stripe {
+    width: 6px;
+  }
+
+  .display-main {
+    font-size: 30px;
+  }
+
+  .utility-button {
+    width: 40px;
+    height: 26px;
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Web Calculator</title>
+  <meta name="description"
+    content="A beautifully crafted, responsive retro physical calculator built with semantic HTML, vanilla CSS, and clean JavaScript.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page-wrapper">
+    <h1 class="sr-only">Retro Physical Calculator</h1>
+
+    <!-- Calculator Physical Body -->
+    <section class="calculator" id="calculator" aria-label="Electronic Calculator">
+
+      <!-- Top Decorative Colored Stripes -->
+      <div class="top-stripes" aria-hidden="true">
+        <span class="stripe stripe-red"></span>
+        <span class="stripe stripe-yellow"></span>
+        <span class="stripe stripe-blue"></span>
+      </div>
+
+      <!-- LCD Screen Display Area -->
+      <div class="calculator-display" id="calculator-display">
+        <div class="lcd-screen" id="lcd-screen">
+          <div class="display-main" id="display-main" aria-live="polite">1822</div>
+          <div class="display-expression" id="display-expression">19×96+12−14</div>
+        </div>
+
+        <!-- History Popover (Unobtrusive retro slide-down overlay) -->
+        <div class="history-panel" id="history-panel" aria-hidden="true">
+          <div class="history-header">
+            <span class="history-title">Calculation History</span>
+            <button type="button" class="history-clear-btn" id="history-clear-btn" title="Clear History">Clear</button>
+          </div>
+          <div class="history-list" id="history-list">
+            <p class="history-empty">No calculations yet</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Utility Buttons Row (History & Backspace) -->
+      <div class="utility-row">
+        <button type="button" class="utility-button" id="btn-history" data-action="history"
+          aria-label="View calculation history" title="History (H)">
+          <svg class="utility-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <polyline points="12 7 12 12 15 15" />
+            <path d="M3.5 12a8.5 8.5 0 0 1 2.5-6" />
+            <polyline points="2.5 3 6 6 2.5 9" />
+          </svg>
+        </button>
+
+        <button type="button" class="utility-button" id="btn-backspace" data-action="backspace"
+          aria-label="Delete last digit" title="Backspace (Delete)">
+          <svg class="utility-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+            <line x1="18" y1="9" x2="12" y2="15" />
+            <line x1="12" y1="9" x2="18" y2="15" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Main Calculator Keypad Grid -->
+      <div class="calculator-grid" id="calculator-grid">
+
+        <!-- Row 1: C, ±, %, ÷ -->
+        <button type="button" class="calc-btn clear-button" data-action="clear" aria-label="Clear all">C</button>
+        <button type="button" class="calc-btn operator-button" data-action="toggle-sign"
+          aria-label="Toggle positive or negative">±</button>
+        <button type="button" class="calc-btn operator-button" data-action="percent" aria-label="Percent">%</button>
+        <button type="button" class="calc-btn operator-button" data-action="operator" data-operator="÷"
+          aria-label="Divide">÷</button>
+
+        <!-- Row 2: 7, 8, 9, × -->
+        <button type="button" class="calc-btn number-button" data-number="7">7</button>
+        <button type="button" class="calc-btn number-button" data-number="8">8</button>
+        <button type="button" class="calc-btn number-button" data-number="9">9</button>
+        <button type="button" class="calc-btn operator-button" data-action="operator" data-operator="×"
+          aria-label="Multiply">×</button>
+
+        <!-- Row 3: 4, 5, 6, − -->
+        <button type="button" class="calc-btn number-button" data-number="4">4</button>
+        <button type="button" class="calc-btn number-button" data-number="5">5</button>
+        <button type="button" class="calc-btn number-button" data-number="6">6</button>
+        <button type="button" class="calc-btn operator-button" data-action="operator" data-operator="−"
+          aria-label="Subtract">−</button>
+
+        <!-- Row 4: 1, 2, 3, + -->
+        <button type="button" class="calc-btn number-button" data-number="1">1</button>
+        <button type="button" class="calc-btn number-button" data-number="2">2</button>
+        <button type="button" class="calc-btn number-button" data-number="3">3</button>
+        <button type="button" class="calc-btn operator-button" data-action="operator" data-operator="+"
+          aria-label="Add">+</button>
+
+        <!-- Row 5: 0 (spans 2 columns), ., = -->
+        <button type="button" class="calc-btn number-button zero-button" data-number="0">0</button>
+        <button type="button" class="calc-btn number-button decimal-button" data-action="decimal"
+          aria-label="Decimal point">.</button>
+        <button type="button" class="calc-btn equals-button" data-action="equals"
+          aria-label="Calculate result">=</button>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
