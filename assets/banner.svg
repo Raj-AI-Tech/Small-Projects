@@ -105,7 +105,7 @@
   <!-- Subtitle / Tagline -->
   <g transform="translate(600, 215)">
     <text x="0" y="0" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="18" font-weight="400" fill="url(#taglineGrad)" letter-spacing="0.5">
-      The 15-Domain Multiverse: Web, Mobile, AI, Big Data, Security, Cloud, DevOps, Systems &amp; Beyond
+      The 15-Domain Multiverse: Web, Mobile, AI, Python, C++, Java, Systems, Data &amp; Beyond
     </text>
     <text x="0" y="30" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14.5" font-weight="600" fill="#38bdf8" letter-spacing="0.5">
       🚀 Fresh project added every single day • Continuous Learning • Production-Grade Craft
@@ -126,40 +126,40 @@
       <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">📱 Mobile</text>
     </g>
 
-    <!-- Pill 3: AI & ML -->
+    <!-- Pill 3: Python -->
     <g transform="translate(280, 0)">
+      <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#eab308" stroke-width="1.2" stroke-opacity="0.8" />
+      <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">🐍 Python</text>
+    </g>
+
+    <!-- Pill 4: C++ -->
+    <g transform="translate(420, 0)">
+      <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#06b6d4" stroke-width="1.2" stroke-opacity="0.8" />
+      <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">⚡ C++</text>
+    </g>
+
+    <!-- Pill 5: Java -->
+    <g transform="translate(560, 0)">
+      <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#f97316" stroke-width="1.2" stroke-opacity="0.8" />
+      <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">☕ Java</text>
+    </g>
+
+    <!-- Pill 6: AI & ML -->
+    <g transform="translate(700, 0)">
       <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#a855f7" stroke-width="1.2" stroke-opacity="0.8" />
       <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">🧠 AI &amp; ML</text>
     </g>
 
-    <!-- Pill 4: Data & Cloud -->
-    <g transform="translate(420, 0)">
-      <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#06b6d4" stroke-width="1.2" stroke-opacity="0.8" />
-      <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">☁️ Cloud &amp; SRE</text>
-    </g>
-
-    <!-- Pill 5: Cyber -->
-    <g transform="translate(560, 0)">
+    <!-- Pill 7: Security -->
+    <g transform="translate(840, 0)">
       <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#ef4444" stroke-width="1.2" stroke-opacity="0.8" />
       <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">🛡️ Security</text>
     </g>
 
-    <!-- Pill 6: Systems & Game -->
-    <g transform="translate(700, 0)">
-      <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#ec4899" stroke-width="1.2" stroke-opacity="0.8" />
-      <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">⚡ Systems</text>
-    </g>
-
-    <!-- Pill 7: IoT & Web3 -->
-    <g transform="translate(840, 0)">
-      <rect x="0" y="0" width="130" height="36" rx="10" fill="#1e293b" fill-opacity="0.8" stroke="#eab308" stroke-width="1.2" stroke-opacity="0.8" />
-      <text x="65" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">🌐 Web3 &amp; IoT</text>
-    </g>
-
-    <!-- Pill 8: 15 Disciplines -->
+    <!-- Pill 8: 15 Tracks -->
     <g transform="translate(980, 0)">
-      <rect x="0" y="0" width="120" height="36" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#f97316" stroke-width="1.2" stroke-opacity="0.8" />
-      <text x="60" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#f97316">✨ 15 Tracks</text>
+      <rect x="0" y="0" width="120" height="36" rx="10" fill="#0f172a" fill-opacity="0.9" stroke="#ec4899" stroke-width="1.2" stroke-opacity="0.8" />
+      <text x="60" y="23" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#ec4899">✨ 15 Tracks</text>
     </g>
   </g>
 </svg>

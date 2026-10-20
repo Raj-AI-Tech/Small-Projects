@@ -33,7 +33,7 @@ Welcome to **Small Projects** — your comprehensive daily sandbox spanning the 
 
 Too many developers get stuck in tutorial hell or overwhelmed by massive, monolithic architectures. Here, we believe in **high-velocity, atomic learning**:
 * 📅 **Fresh Projects Added Daily**: New mini-projects get committed regularly so you never run out of inspiration or stop learning.
-* 🏛️ **15 Distinct Disciplines**: From low-level Systems and Embedded IoT to Web3, Cloud, AI, and Creative Coding—every corner of tech is explored.
+* 🏛️ **15 Distinct Disciplines**: Covering everything from Web, Mobile, AI, and Big Data to pure Python, C++, Java, Systems, and Creative Coding.
 * ⚡ **Production-Grade Craftsmanship**: Every micro-project adheres to clean design, sensible architecture, semantic code, and zero bloat.
 * 🎓 **Self-Contained & Modular**: Clone, run, inspect, and learn in under 10 minutes.
 
@@ -63,11 +63,11 @@ Explore our complete curriculum across all 15 software engineering disciplines. 
 | **03** | 🧠 **AI & Machine Learning** | Pattern recognition, deep neural nets & NLP | `Python` `PyTorch` `TensorFlow` `scikit-learn` `C++` | [Explore ↓](#03--artificial-intelligence-ai--machine-learning-ml) |
 | **04** | 📊 **Data Science & Big Data** | Actionable insights, data lakes & ETL pipelines | `Python` `R` `SQL` `Apache Spark` `Hadoop` | [Explore ↓](#04--data-science--big-data-engineering) |
 | **05** | 🛡️ **Cybersecurity & Ethical Hacking** | Securing assets, pentesting & custom security tools | `Python` `Bash` `C` `PowerShell` `Linux` `Wireshark` | [Explore ↓](#05--cybersecurity--ethical-hacking) |
-| **06** | ☁️ **Cloud Computing & Infra** | Serverless apps, remote networks & managed clouds | `AWS` `Azure` `Google Cloud (GCP)` | [Explore ↓](#06--cloud-computing--infrastructure) |
-| **07** | ⚙️ **DevOps & SRE** | Deployment automation, CI/CD & infrastructure-as-code | `Docker` `Kubernetes` `Jenkins` `Terraform` `GitHub Actions` | [Explore ↓](#07--devops--site-reliability-engineering-sre) |
+| **06** | 🐍 **Python** | Rapid scripting, automation, CLI tools & clean APIs | `Python 3` `FastAPI` `Requests` `Rich` `BeautifulSoup` | [Explore ↓](#06--python) |
+| **07** | ⚡ **C++** | Ultra-high performance, memory mastery & algorithms | `C++20` `STL` `CMake` `Multithreading` `Pointers` | [Explore ↓](#07--c) |
 | **08** | 🎮 **Game Development** | Physics engines, game logic & 2D/3D graphics | `C++` `C#` `Unity` `Unreal Engine` `Godot` | [Explore ↓](#08--game-development) |
-| **09** | ⚡ **Systems Programming** | Low-level hardware interfaces, OS & compilers | `C` `C++` `Rust` `Assembly` | [Explore ↓](#09--systems-programming) |
-| **10** | 🤖 **Embedded Systems & IoT** | Microcontrollers, robotics & hardware sensors | `C` `C++` `MicroPython` `Arduino` `Raspberry Pi` | [Explore ↓](#10--embedded-systems--internet-of-things-iot) |
+| **09** | ⚙️ **Systems Programming** | Low-level hardware interfaces, OS & compilers | `C` `C++` `Rust` `Assembly` | [Explore ↓](#09--systems-programming) |
+| **10** | ☕ **Java** | Robust OOP, multithreaded systems & JVM architecture | `Java 21` `JVM` `Spring Boot` `Maven` `Gradle` | [Explore ↓](#10--java) |
 | **11** | 🗄️ **Database Engineering (DBMS)** | Relational schemas, NoSQL stores & fast caches | `PostgreSQL` `MySQL` `MongoDB` `Redis` `Oracle` | [Explore ↓](#11--database-administration--engineering-dbms) |
 | **12** | ⛓️ **Blockchain & Web3** | Decentralized dApps, smart contracts & DeFi | `Solidity` `Rust` `Go` `Ethereum` `Web3.js` | [Explore ↓](#12--blockchain--web3-development) |
 | **13** | 🧪 **QA & Test Automation** | Automated bug sweeps, E2E testing & load runs | `Python` `Playwright` `Cypress` `Selenium` `JUnit` | [Explore ↓](#13--quality-assurance-qa--test-automation) |
@@ -131,25 +131,25 @@ Explore our complete curriculum across all 15 software engineering disciplines. 
 
 ---
 
-### 06. ☁️ Cloud Computing & Infrastructure
-* **Focus**: Designing, deploying, and managing applications on remote server networks instead of local hardware.
-* **Core Domains**: Cloud architecture, serverless computing, and managed cloud databases.
-* **Key Tech**: `Amazon Web Services (AWS)` `Microsoft Azure` `Google Cloud Platform (GCP)`
+### 06. 🐍 Python
+* **Focus**: Writing clean, readable, high-productivity scripts, automation workflows, backend APIs, and cross-platform utilities.
+* **Core Domains**: Scripting & automation, web scraping, backend APIs, CLI utilities, and rapid prototyping.
+* **Key Tech**: `Python 3` `FastAPI` `Flask` `Requests` `Rich` `BeautifulSoup` `Poetry`
 * **Concepts & Project Types**:
-  * **Serverless Image Resizer** — AWS Lambda event trigger generating multi-size thumbnails on S3 uploads.
-  * **Cloud Latency Ping Daemon** — Global heartbeat benchmark testing multi-region ping times.
-  * **Automated S3 Cold Archiver** — Lifecycle cron script migrating stale logs to Glacier tier.
+  * **Automated Web Scraper & Alert Bot** — Headless scraper checking prices or news and dispatching webhook alerts.
+  * **Interactive Terminal Utility** — CLI task manager with rich formatting, color-coded tables, and argument parsing.
+  * **Micro RESTful API** — Lightweight FastAPI service with Pydantic validation and automatic OpenAPI docs.
 
 ---
 
-### 07. ⚙️ DevOps & Site Reliability Engineering (SRE)
-* **Focus**: Bridging the gap between software development and IT operations to automate software deployment.
-* **Core Domains**: Continuous Integration/Continuous Deployment (CI/CD), infrastructure as code, and system monitoring.
-* **Key Tech**: `Docker` `Kubernetes` `Jenkins` `Terraform` `GitHub Actions`
+### 07. ⚡ C++
+* **Focus**: Building ultra-fast, memory-efficient, hardware-near software and computational powerhouses.
+* **Core Domains**: High-performance algorithms, manual memory management, template metaprogramming, and concurrency.
+* **Key Tech**: `C++20` `C++23` `STL` `CMake` `Pointers & References` `RAII` `Multithreading`
 * **Concepts & Project Types**:
-  * **Multi-Stage Docker Blueprint** — Ultra-slim production container reducing Node/Go image size by 90%.
-  * **K8s Pod Self-Healing Demo** — Declarative deployment with liveness probes and rolling updates.
-  * **GitHub Action Auto-Release** — Automated semantic versioning and changelog generator.
+  * **Custom High-Speed Memory Pool** — Fixed-size block allocator bypassing global heap allocation overhead.
+  * **Multi-Threaded Work Queue** — Thread-safe synchronized producer-consumer queue with condition variables.
+  * **Fast Math & Matrix Engine** — High-performance linear algebra routines with cache optimization.
 
 ---
 
@@ -164,7 +164,7 @@ Explore our complete curriculum across all 15 software engineering disciplines. 
 
 ---
 
-### 09. ⚡ Systems Programming
+### 09. ⚙️ Systems Programming
 * **Focus**: Writing low-level software that provides services to other software and interacts closely with hardware.
 * **Core Domains**: Operating systems (like Linux or Windows), device drivers, compilers, and file systems.
 * **Key Tech**: `C` `C++` `Rust` `Assembly`
@@ -175,14 +175,14 @@ Explore our complete curriculum across all 15 software engineering disciplines. 
 
 ---
 
-### 10. 🤖 Embedded Systems & Internet of Things (IoT)
-* **Focus**: Programming dedicated microcontrollers and hardware chips inside physical products.
-* **Core Domains**: Smart appliances, automotive computers, robotics, medical devices, and wearables.
-* **Key Tech**: `C` `C++` `MicroPython` `Arduino` `Raspberry Pi`
+### 10. ☕ Java
+* **Focus**: Developing robust, platform-independent, object-oriented applications running on the Java Virtual Machine (JVM).
+* **Core Domains**: Object-Oriented Design (OOP), concurrency & multithreading, JVM internals, and modular backends.
+* **Key Tech**: `Java 21+` `JVM` `Maven` `Gradle` `Spring Boot` `JUnit` `JavaFX`
 * **Concepts & Project Types**:
-  * **OLED Real-Time Telemetry** — MicroPython driver rendering CPU temps and network graph on I2C display.
-  * **Ultrasonic Autonomous Rover** — Collision avoidance logic for dual-motor Arduino car.
-  * **ESP32 BLE Beacon Scanner** — Low-power Bluetooth detector tracking nearby devices and RSSI signals.
+  * **Multi-Threaded Downloader Engine** — Parallel chunked file downloader with thread pools and progress tracking.
+  * **In-Memory Cache with TTL & Eviction** — Thread-safe concurrent LRU cache built with `ConcurrentHashMap`.
+  * **Desktop Utility with JavaFX** — Clean graphical utility with reactive event listeners and modern styling.
 
 ---
 
@@ -260,7 +260,7 @@ All projects are designed with zero friction and clear instructions.
 ### 🐍 For Python, AI & Data Science Projects
 1. Navigate to the project directory:
    ```bash
-   cd "<Category-Name>/<Project-Name>"
+   cd "Python/<Project-Name>"
    ```
 2. Setup and run:
    ```bash
@@ -273,12 +273,24 @@ All projects are designed with zero friction and clear instructions.
 ### ⚡ For C++, Systems & Game Projects
 1. Navigate to the project directory:
    ```bash
-   cd "<Category-Name>/<Project-Name>"
+   cd "C++/<Project-Name>"
    ```
 2. Compile and execute:
    ```bash
    g++ -std=c++20 -O3 main.cpp -o app
    ./app   # On Windows: .\app.exe
+   ```
+
+### ☕ For Java Projects
+1. Navigate to the project directory:
+   ```bash
+   cd "Java/<Project-Name>"
+   ```
+2. Compile and run:
+   ```bash
+   javac Main.java && java Main
+   # or with Maven
+   mvn compile exec:java
    ```
 
 ### 📱 For Mobile (Android / iOS / Flutter)
@@ -293,7 +305,7 @@ All projects are designed with zero friction and clear instructions.
 Explore the diverse spectrum of technologies powering our daily drops:
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,nodejs,python,fastapi,pytorch,tensorflow,cpp,c,rust,kotlin,swift,flutter,java,cs,dotnet,solidity,postgres,mysql,mongodb,redis,docker,kubernetes,aws,gcp,git,linux" alt="Tech Stack Icons" />
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,nodejs,python,fastapi,pytorch,tensorflow,cpp,c,rust,kotlin,swift,flutter,java,cs,dotnet,solidity,postgres,mysql,mongodb,redis,git,linux" alt="Tech Stack Icons" />
 </p>
 
 ---
@@ -312,7 +324,7 @@ Got an awesome micro-project idea in any of the 15 disciplines? Community contri
    - Include a brief `README.md` inside your project directory detailing how to run it.
 4. **Commit and Push**:
    ```bash
-   git commit -m "feat(category): add your project name"
+   git commit -m "add your project name"
    git push origin feature/your-project-name
    ```
 5. **Open a Pull Request**!
