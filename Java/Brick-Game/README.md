@@ -10,9 +10,9 @@ A complete, fully functional 2D retro Brick Breaker / Breakout arcade game writt
 - **Realistic 2D Collision Physics**: Multi-step collision resolution preventing ball tunneling or sticking, with paddle angle deflection based on point-of-impact (up to 60°) and minimum vertical velocity enforcement to prevent flat bouncing loops.
 - **Multi-Hit Metallic Bricks**: Silver bricks require 2 hits and display a retro red damage crack emblem on first impact.
 - **10 Unique Level Layouts + Endless Mode**:
-  1. *The Wing / Inverted Pyramid* (Reference 1)
-  2. *The Fortress with Diagonal Rainbow* (Reference 3)
-  3. *The Butterfly / X-Wing* (Reference 2)
+  1. *The Wing / Inverted Pyramid* 
+  2. *The Fortress with Diagonal Rainbow* 
+  3. *The Butterfly / X-Wing*
   4. *The Diamond Shield*
   5. *Twin Castles with Suspension Bridge*
   6. *Interlocking Staircase*
@@ -53,11 +53,11 @@ Java/Brick-Game/
 
 ## 📸 Gameplay Previews
 
-| Level 1: The Wing (Ref. 1) | Level 2: Fortress Rainbow (Ref. 3) |
+| Level 1: The Wing | Level 2: Fortress Rainbow |
 | :---: | :---: |
 | ![Level 1](screenshots/preview_level_1.png) | ![Level 2](screenshots/preview_level_2.png) |
 
-| Level 3: Butterfly X-Wing (Ref. 2) | Title / Start Screen |
+| Level 3: Butterfly X-Wing | Title / Start Screen |
 | :---: | :---: |
 | ![Level 3](screenshots/preview_level_3.png) | ![Start Screen](screenshots/preview_start.png) |
 
