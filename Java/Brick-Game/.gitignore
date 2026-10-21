@@ -1,0 +1,15 @@
+# Compiled class files & build artifacts
+bin/
+*.class
+
+# IDE configurations
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Operating system metadata
+.DS_Store
+Thumbs.db

@@ -180,6 +180,7 @@ Explore our complete curriculum across all 15 software engineering disciplines. 
 * **Core Domains**: Object-Oriented Design (OOP), concurrency & multithreading, JVM internals, and modular backends.
 * **Key Tech**: `Java 21+` `JVM` `Maven` `Gradle` `Spring Boot` `JUnit` `JavaFX`
 * **Concepts & Project Types**:
+  * [**Brick-Game**](./Java/Brick-Game) — Complete retro Brick Breaker / Breakout arcade game with 2D physics, 10 levels, procedural endless mode, and synthesized 8-bit audio in pure Java Swing.
   * **Multi-Threaded Downloader Engine** — Parallel chunked file downloader with thread pools and progress tracking.
   * **In-Memory Cache with TTL & Eviction** — Thread-safe concurrent LRU cache built with `ConcurrentHashMap`.
   * **Desktop Utility with JavaFX** — Clean graphical utility with reactive event listeners and modern styling.
